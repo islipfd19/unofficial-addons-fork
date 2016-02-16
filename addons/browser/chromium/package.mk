@@ -70,6 +70,10 @@ make_target() {
     -Dgoogle_api_key=$_google_api_key
     -Dgoogle_default_client_id=$_google_default_client_id
     -Dgoogle_default_client_secret=$_google_default_client_secret
+<<<<<<< HEAD
+=======
+#    -Dtarget_arch=x64
+>>>>>>> 28d5cfe38a4d2308a2ed023dd0187e55fbf57be7
     -Dtarget_arch="$ARCH"
     -Dfastbuild=2
     -Dwerror=
