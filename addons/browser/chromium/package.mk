@@ -66,12 +66,18 @@ make_target() {
   _google_default_client_id=740889307901-4bkm4e0udppnp1lradko85qsbnmkfq3b.apps.googleusercontent.com
   _google_default_client_secret=9TJlhL661hvShQub4cWhANXa
 
+  if [ "$ARCH" == "x86_64" ]; then
+  	TARGET_ARCH="x64"
+  else
+  	TARGET_ARCH="arm"
+  fi
+
   local _chromium_conf=(
     -Dgoogle_api_key=$_google_api_key
     -Dgoogle_default_client_id=$_google_default_client_id
     -Dgoogle_default_client_secret=$_google_default_client_secret
-    -Dtarget_arch=x64
-#    -Dtarget_arch="$ARCH"
+#    -Dtarget_arch=x64
+    -Dtarget_arch="$TARGET_ARCH"
     -Dfastbuild=2
     -Dwerror=
     -Dclang=0
