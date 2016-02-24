@@ -21,7 +21,7 @@
 PKG_NAME="makemkv"
 PKG_VERSION="1.9.7"
 PKG_REV="0"
-PKG_ARCH="any"
+PKG_ARCH="x86_64"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.makemkv.com/forum2/viewforum.php?f=3"
 PKG_URL="http://www.makemkv.com/download/${PKG_NAME}-oss-${PKG_VERSION}.tar.gz"
@@ -63,11 +63,7 @@ makeinstall_target() {
 }
 
 addon() {
-  if [ $ARCH == "x86_64" ]; then
-    MAKEMKV_ARCH=amd64
-  else
-    MAKEMKV_ARCH=arm
-  fi
+  MAKEMKV_ARCH=amd64
 
   mkdir -p $ADDON_BUILD/$PKG_ADDON_ID/bin
   cp $PKG_BUILD/bin/bin/$MAKEMKV_ARCH/makemkvcon $ADDON_BUILD/$PKG_ADDON_ID/bin/makemkvcon.bin
