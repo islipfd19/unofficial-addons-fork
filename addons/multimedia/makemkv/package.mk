@@ -63,7 +63,11 @@ makeinstall_target() {
 }
 
 addon() {
-  MAKEMKV_ARCH=amd64
+  if [ $ARCH == "x86_64" ]; then
+    MAKEMKV_ARCH=amd64
+  else
+    MAKEMKV_ARCH=arm
+  fi
 
   mkdir -p $ADDON_BUILD/$PKG_ADDON_ID/bin
   cp $PKG_BUILD/bin/bin/$MAKEMKV_ARCH/makemkvcon $ADDON_BUILD/$PKG_ADDON_ID/bin/makemkvcon.bin
