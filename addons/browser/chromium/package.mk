@@ -19,10 +19,16 @@
 ################################################################################
 
 PKG_NAME="chromium"
+<<<<<<< HEAD
 PKG_VERSION="48.0.2564.82"
 #PKG_VERSION="48.0.2564.99"
 PKG_REV="2"
 PKG_ARCH="any"
+=======
+PKG_VERSION="49.0.2623.87"
+PKG_REV="4"
+PKG_ARCH="x86_64"
+>>>>>>> e1344bf6ab469706ed533b619107d5aca142fbff
 PKG_LICENSE="Mixed"
 PKG_SITE="http://www.chromium.org/Home"
 PKG_URL="https://commondatastorage.googleapis.com/chromium-browser-official/$PKG_NAME-$PKG_VERSION.tar.xz"
