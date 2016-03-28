@@ -20,7 +20,7 @@
 
 PKG_NAME="mtpfs"
 PKG_VERSION="1.1"
-PKG_REV="0"
+PKG_REV="1"
 PKG_ARCH="x86_64"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.adebenham.com/mtpfs/"
@@ -41,6 +41,8 @@ PKG_AUTORECONF="yes"
 PKG_MAINTAINER="Stefan Saraev (seo at irc.freenode.net)"
 
 PKG_CONFIGURE_OPTS_TARGET="--disable-mad"
+
+# TODO: mtpfs runs host utils while building, fix and set PKG_ARCH="any"
 
 pre_configure_target() {
   export LIBS="-lusb-1.0 -ludev"

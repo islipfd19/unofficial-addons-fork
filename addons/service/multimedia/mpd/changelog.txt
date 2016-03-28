@@ -1,5 +1,13 @@
+7.0.2(unreleased)
+- add lame mp3 encoder support
+- add http server output support
+
+7.0.1
+- update to mpd-0.19.14
+
 7.0.0
 - rebuild for OpenELEC-7.0
+
 6.0.0
 - rebuild for OE 6
 

@@ -20,8 +20,8 @@
 ################################################################################
 
 PKG_NAME="mediainfo"
-PKG_VERSION="0.7.69"
-PKG_REV="0"
+PKG_VERSION="0.7.83"
+PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://mediaarea.net/en/MediaInfo/Download/Source"

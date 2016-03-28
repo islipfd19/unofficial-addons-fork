@@ -19,13 +19,13 @@
 ################################################################################
 
 PKG_NAME="mpd"
-PKG_VERSION="0.18.12"
-PKG_REV="0"
+PKG_VERSION="0.19.14"
+PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki"
 PKG_URL="http://www.musicpd.org/download/${PKG_NAME}/${PKG_VERSION%.*}/${PKG_NAME}-${PKG_VERSION}.tar.xz"
-PKG_DEPENDS_TARGET="toolchain glib ffmpeg libmad libogg flac faad2 curl alsa-lib yajl libid3tag"
+PKG_DEPENDS_TARGET="toolchain boost glib ffmpeg libmad libogg flac faad2 curl alsa-lib yajl libid3tag lame"
 PKG_PRIORITY="optional"
 PKG_SECTION="service.multimedia"
 PKG_SHORTDESC="Flexible, powerful, server-side application for playing music"
@@ -45,7 +45,6 @@ pre_configure_target() {
   export LDFLAGS="$LDFLAGS -ldl -logg"
 }
 
-
 PKG_CONFIGURE_OPTS_TARGET="--enable-alsa \
              --disable-roar \
              --disable-ao \
@@ -53,6 +52,7 @@ PKG_CONFIGURE_OPTS_TARGET="--enable-alsa \
              --disable-bzip2 \
              --disable-cdio-paranoia \
              --enable-curl \
+             --disable-smbclient \
              --disable-soup \
              --disable-debug \
              --disable-documentation \
@@ -60,13 +60,13 @@ PKG_CONFIGURE_OPTS_TARGET="--enable-alsa \
              --enable-ffmpeg \
              --disable-fluidsynth \
              --disable-gme \
-             --disable-httpd-output \
+             --enable-httpd-output \
              --enable-id3 \
              --disable-jack \
              --disable-lastfm \
              --disable-despotify \
              --disable-soundcloud \
-             --disable-lame-encoder \
+             --enable-lame-encoder \
              --disable-libwrap \
              --disable-lsr \
              --enable-mad \
@@ -89,7 +89,8 @@ PKG_CONFIGURE_OPTS_TARGET="--enable-alsa \
              --disable-test \
              --disable-twolame-encoder \
              --disable-zzip \
-             --with-zeroconf=no"
+             --with-zeroconf=no \
+             --disable-icu"
 
 makeinstall_target() {
   : # nop

@@ -20,8 +20,8 @@
 ################################################################################
 
 PKG_NAME="smartmontools"
-PKG_VERSION="6.2"
-PKG_REV="0"
+PKG_VERSION="6.4"
+PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"
 PKG_SITE="http://smartmontools.sourceforge.net"

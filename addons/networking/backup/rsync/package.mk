@@ -19,8 +19,8 @@
 ################################################################################
 
 PKG_NAME="rsync"
-PKG_VERSION="3.1.1"
-PKG_REV="0"
+PKG_VERSION="3.1.2"
+PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="OSS"
 PKG_SITE="http://www.samba.org/ftp/rsync/rsync.html"
@@ -36,7 +36,7 @@ PKG_ADDON_TYPE="xbmc.python.script"
 PKG_ADDON_PROVIDES=""
 PKG_ADDON_REPOVERSION="7.0"
 
-PKG_AUTORECONF="yes"
+PKG_AUTORECONF="no"
 
 PKG_MAINTAINER="unofficial.addon.pro"
 
