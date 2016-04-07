@@ -1,6 +1,6 @@
 ################################################################################
 #      This file is part of OpenELEC - http://www.openelec.tv
-#      Copyright (C) 2013 Dag Wieers (dag@wieers.com)
+#      Copyright (C) 2009-2016 Stephan Raue (stephan@openelec.tv)
 #
 #  This Program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -18,40 +18,25 @@
 #  http://www.gnu.org/copyleft/gpl.html
 ################################################################################
 
-PKG_NAME="dstat"
-PKG_VERSION="0.7.3"
-PKG_REV="1"
+PKG_NAME="tvdb_api"
+PKG_VERSION="1.10"
+PKG_REV="0"
 PKG_ARCH="any"
-PKG_LICENSE="GPL"
-PKG_SITE="http://dag.wieers.com/home-made/dstat/"
-PKG_URL="https://github.com/dagwieers/dstat/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_LICENSE="unlicense"
+PKG_SITE="http://github.com/dbr/tvdb_api/tree/master"
+PKG_URL="https://pypi.python.org/packages/source/t/$PKG_NAME/$PKG_NAME-$PKG_VERSION.tar.gz"
+PKG_DEPENDS_TARGET="toolchain Python"
 PKG_PRIORITY="optional"
-PKG_SECTION="debug/tools"
-PKG_SHORTDESC="dstat: versatile resource statistics tool"
-PKG_LONGDESC="Dstat is a versatile replacement for vmstat, iostat, netstat and ifstat. Dstat overcomes some of their limitations and adds some extra features, more counters and flexibility. Dstat is handy for monitoring systems during performance tuning tests, benchmarks or troubleshooting."
-
-PKG_IS_ADDON="yes"
-PKG_ADDON_TYPE="xbmc.python.script"
-PKG_ADDON_PROVIDES=""
-PKG_ADDON_REPOVERSION="7.0"
-
+PKG_SECTION="libs"
+PKG_SHORTDESC="Interface to thetvdb.com"
+PKG_LONGDESC="API interface to TheTVDB.com"
+PKG_IS_ADDON="no"
 PKG_AUTORECONF="no"
-
-PKG_MAINTAINER="Dag Wieers (dag@wieers.com)"
-
-make_target() {
-  : # nop
-}
+PKG_MAINTAINER="luivit (luivit39@gmail.com)"
 
 makeinstall_target() {
   : # nop
 }
-
-addon() {
-  mkdir -p $ADDON_BUILD/$PKG_ADDON_ID/bin
-  cp -P $PKG_BUILD/dstat $ADDON_BUILD/$PKG_ADDON_ID/bin
-
-  mkdir -p $ADDON_BUILD/$PKG_ADDON_ID/plugins
-  cp $PKG_BUILD/plugins/dstat_*.py $ADDON_BUILD/$PKG_ADDON_ID/plugins
+make_target() {
+ python setup.py build
 }
